@@ -1,4 +1,3 @@
-#!/usr/bin/node
 var iControl = require('../lib/iControl')
   , config = require('../config')
   , util = require('util');
