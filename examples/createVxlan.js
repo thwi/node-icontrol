@@ -9,15 +9,12 @@ var gw = new iControl({
   strict: config.strict
 });
 
-gw.post({
-  path: '/net/tunnels/tunnel',
-  body: {
-    'name': 'vxlan30001',
-    'profile': 'vxlan',
-    'key': '30001',
-    'local-address': '10.1.20.254',
-    'remote-address': '239.0.0.1'
-  },
+gw.create('/net/tunnels/tunnel', {
+  'name': 'vxlan30001',
+  'profile': 'vxlan',
+  'key': '30001',
+  'local-address': '10.1.20.254',
+  'remote-address': '239.0.0.1'
 },
 function(err, data) {
   if (err) throw err;

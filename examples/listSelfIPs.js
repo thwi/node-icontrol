@@ -9,7 +9,7 @@ var gw = new iControl({
   strict: config.strict
 });
 
-gw.get('/net/self', function(err, res) {
+gw.list('/net/self', function(err, res) {
   if (err) throw err;
   console.log(util.inspect(res));
 });

@@ -9,11 +9,8 @@ var gw = new iControl({
   strict: config.strict
 });
 
-gw.put({
-  path: '/ltm/pool/test-pool', 
-  body: {
-    'description': 'This pool now has a description'
-  },
+gw.put('/ltm/pool/test-pool', {
+  'description': 'This pool now has a description'
 },
 function(err, data) {
   if (err) throw err;
