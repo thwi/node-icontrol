@@ -11,6 +11,10 @@ Requires BIG-IP >= 11.4.0 and an enabled ircd service:
 (tmos) # modify sys service ircd add
 ```
 
+See F5 iControl REST API documentation for detail:
+
+https://devcentral.f5.com/d/icontrol-rest-user-guide
+
 ## Installation
 
 ```
@@ -92,8 +96,6 @@ bigip.delete('/ltm/pool/test-pool', function(err, res) {
   // res should be undefined
 });
 ```
-
-See F5 iControl REST API documentation for detail.
 
 ## TODO
 
