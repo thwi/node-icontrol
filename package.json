@@ -5,10 +5,11 @@
 , "author": "Thomas Williams <twilliams@gmail.com>"
 , "dependencies": { "request": "2.x" }
 , "readmeFilename": "README.md"
-, "engines": { "node": ">=0.10.x" } 
+, "main": "index.js"
+, "engines": { "node": ">=0.6.0" } 
 , "repository":
-    { "type": "git"
-    , "url": "https://github.com/thwi/node-icontrol"
-    }
+  { "type": "git"
+  , "url": "https://github.com/thwi/node-icontrol"
+  }
 , "bugs": "https://github.com/thwi/node-icontrol/issues"
 }
