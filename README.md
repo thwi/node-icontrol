@@ -29,12 +29,12 @@ var bigip = new iControl({
 });
 ```
 
-### GET: read/list object(s)
+### GET
+## Read configuration object(s)
 
 ```
 bigip.get('/sys/software/image', function(err, res) {
-  if (err) throw err;
-  // do something with JSON result
+  // do something with result
 });
 ```
 
@@ -45,11 +45,12 @@ bigip.get({
   path: '/sys/software/image',
   qs: '$expand=true'
 }, function(err, res) {
-  // do something with JSON result 
+  // do something with result
 });
 ```
 
-### POST (create)
+### POST
+## Create configuration object(s)
 
 ```
 bigip.post({
@@ -68,7 +69,8 @@ bigip.post({
 });
 ````
 
-### PUT (modify/edit existing object)
+### PUT
+## Modify existing configuration object
 
 ```
 bigip.put({
@@ -83,21 +85,18 @@ bigip.put({
 ```
 
 ### DELETE
+## Delete existing configuration object
 
 ```
 bigip.delete('/ltm/pool/test-pool', function(err, res) {
-  if (err) throw err;
-  // res should be null
+  // res should be undefined
 });
 ```
 
-See the examples directory and F5 iControl REST API documentation for detail.
+See F5 iControl REST API documentation for detail.
 
 ## TODO
 
 * Collate paginated results
 * More examples
 * Unit tests
-
-## Changelog
-* 2014-01-28 Initial commit
