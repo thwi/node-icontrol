@@ -30,7 +30,7 @@ var bigip = new iControl({
 ```
 
 ### GET
-## Read configuration object(s)
+#### Read configuration object(s)
 
 ```
 bigip.get('/sys/software/image', function(err, res) {
@@ -50,7 +50,7 @@ bigip.get({
 ```
 
 ### POST
-## Create configuration object(s)
+#### Create configuration object(s)
 
 ```
 bigip.post({
@@ -70,7 +70,7 @@ bigip.post({
 ````
 
 ### PUT
-## Modify existing configuration object
+#### Modify existing configuration object
 
 ```
 bigip.put({
@@ -85,7 +85,7 @@ bigip.put({
 ```
 
 ### DELETE
-## Delete existing configuration object
+#### Delete existing configuration object
 
 ```
 bigip.delete('/ltm/pool/test-pool', function(err, res) {
