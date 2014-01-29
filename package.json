@@ -1,6 +1,6 @@
 { "name": "icontrol"
 , "description": "F5 BIG-IP iControl REST API implementation"
-, "version": "0.1.1"
+, "version": "0.1.2"
 , "keywords": [ "F5", "BIG-IP", "bigip", "iControl", "REST", "LTM" ]
 , "author": "Thomas Williams <twilliams@gmail.com>"
 , "dependencies": { "request": "2.x" }
