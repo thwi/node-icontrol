@@ -2,9 +2,14 @@
 
 ## Overview
 
-Convience methods for making calls to the BIG-IP iControl REST API.
+Convience methods for making calls to the BIG-IP iControl REST API,
+mimicking the command style of TMSH.
 
-Requires BIG-IP >= 11.4
+Requires BIG-IP >= 11.4.0 and an enabled ircd service:
+
+```
+(tmos) # modify sys service ircd add
+```
 
 ## Installation
 
@@ -29,63 +34,58 @@ var bigip = new iControl({
 });
 ```
 
-### GET
-#### Read configuration object(s)
+### List configuration object(s)
+#### bigip.list(path, [options], callback)
 
 ```
-bigip.get('/sys/software/image', function(err, res) {
+bigip.list('/sys/software/image', function(err, res) {
   // do something with result
 });
 ```
 
-or alternatively
+or alternatively with options:
 
 ```
-bigip.get({
-  path: '/sys/software/image',
-  qs: '$expand=true'
-}, function(err, res) {
+bigip.list('/sys/software/image', {
+  expandAll: true,
+  includeStats: true
+},
+function(err, res) {
   // do something with result
 });
 ```
 
-### POST
-#### Create configuration object(s)
+### Create configuration object(s)
+#### bigip.create(path, options, callback)
 
 ```
-bigip.post({
-  path: '/ltm/pool',
-  body: {
-    'name': 'test-pool',
-    'members': [
-      { 'name': '192.168.100.1:80', 'description': 'test-member-1' },
-      { 'name': '192.168.100.2:80', 'description': 'test-member-2' },
-      { 'name': '192.168.100.3:80', 'description': 'test-member-3' },
-    ]
-  }
-}, function(err, res) {
-  if (err) throw err;
+bigip.create('/ltm/pool', {
+  'name': 'test-pool',
+  'members': [
+    { 'name': '192.168.100.1:80', 'description': 'test-member-1' },
+    { 'name': '192.168.100.2:80', 'description': 'test-member-2' },
+    { 'name': '192.168.100.3:80', 'description': 'test-member-3' },
+  ]
+},
+function(err, res) {
   // newly-created object
 });
 ````
 
-### PUT
-#### Modify existing configuration object
+### Modify existing configuration object
+#### bigip.modify(path, options, callback);
 
 ```
-bigip.put({
-  path: '/ltm/pool/test-pool',
-  body: {
-    'description': 'This pool should now have a description'
-  }
-}, function(err, res) {
-  if (err) throw err;
+bigip.modify('/ltm/pool/test-pool', {
+  'description': 'This pool should now have a description'
+},
+function(err, res) {
   // updated JSON object
 });
 ```
 
-### DELETE
-#### Delete existing configuration object
+### Delete existing configuration object
+#### bigip.delete(path, callback);
 
 ```
 bigip.delete('/ltm/pool/test-pool', function(err, res) {
@@ -97,6 +97,6 @@ See F5 iControl REST API documentation for detail.
 
 ## TODO
 
-* Collate paginated results
-* More examples
-* Unit tests
+* List: collate paginated results
+* List: more options support / docs
+* All: unit tests
