@@ -25,6 +25,8 @@ npm install icontrol
 
 ### Create BIG-IP instance
 
+All default options shown below -- override where desired.
+
 ```
 var iControl = require('icontrol');
 
@@ -34,7 +36,8 @@ var bigip = new iControl({
   port: 443,
   user: 'admin',
   pass: 'admin',
-  strict: true
+  strict: true,
+  debug: false
 });
 ```
 
@@ -99,6 +102,4 @@ bigip.delete('/ltm/pool/test-pool', function(err, res) {
 
 ## TODO
 
-* List: collate paginated results
-* List: more options support / docs
-* All: unit tests
+* Test against BIG-IQ iControl proxy

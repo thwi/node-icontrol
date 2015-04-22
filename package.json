@@ -1,18 +1,36 @@
-{ "name": "icontrol"
-, "description": "F5 BIG-IP iControl REST API implementation"
-, "version": "0.1.4"
-, "keywords":
-  [ "F5", "BIG-IP", "bigip", "iControl"
-  , "REST", "LTM", "tmsh", "F5 Networks"
-  ]
-, "author": "Thomas Williams <twilliams@gmail.com>"
-, "dependencies": { "request": "2.x" }
-, "readmeFilename": "README.md"
-, "main": "index.js"
-, "engines": { "node": ">=0.6.0" } 
-, "repository":
-  { "type": "git"
-  , "url": "https://github.com/thwi/node-icontrol"
-  }
-, "bugs": "https://github.com/thwi/node-icontrol/issues"
+{
+  "name": "icontrol",
+  "description": "F5 BIG-IP iControl REST API implementation",
+  "version": "0.1.5",
+  "keywords": [
+    "F5",
+    "BIG-IP",
+    "bigip",
+    "iControl",
+    "REST",
+    "LTM",
+    "tmsh",
+    "F5 Networks"
+  ],
+  "author": {
+    "name": "Thomas Williams",
+    "email": "t.williams@f5.com",
+    "url": "https://github.com/thwi"
+  },
+  "dependencies": {
+    "request": "2.x"
+  },
+  "readmeFilename": "README.md",
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thwi/node-icontrol"
+  },
+  "bugs": {
+    "url": "https://github.com/thwi/node-icontrol/issues"
+  },
+  "homepage": "https://github.com/thwi/node-icontrol"
 }
